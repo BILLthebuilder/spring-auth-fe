@@ -1,0 +1,35 @@
+.full-page {
+    background-image:
+            url(../../assets/img/login-bg.png);
+    height: 100vh;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.login-card {
+    width: 400px;
+    text-align: center;
+}
+
+.login-field {
+    width: 100%;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+    border: rgb(82, 96, 122);
+}
+mat-card-title{
+    text-transform: uppercase;
+}

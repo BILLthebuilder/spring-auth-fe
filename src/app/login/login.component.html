@@ -1,0 +1,31 @@
+<div class="full-page">
+    <mat-card class="login-card">
+        <mat-card-title> Login </mat-card-title>
+        <mat-card-content>
+            <form (ngSubmit)='login()'>
+                <mat-form-field class="login-field" appearance="outline">
+                    <input matInput placeholder="Email" name="email" [(ngModel)]="email" type="email" required />
+                </mat-form-field>
+                <mat-form-field class="login-field" appearance="outline">
+                    <input matInput placeholder="Password" name="password" [(ngModel)]="password" type="password"
+                         required/>
+                </mat-form-field>
+
+                <div *ngIf="loginError" color="warn">
+                    Login failed. Please try again
+                </div>
+                <mat-card-actions>
+                    <button *ngIf="!busy" [disabled]="busy" mat-raised-button color="primary" class="login-field" type="submit">
+                        Login
+                    </button>
+                    <button *ngIf="busy" style="display:flex;justify-content:center" [disabled]="busy" mat-raised-button color="primary" class="login-field" type="submit">
+                        <mat-spinner [diameter]="30"></mat-spinner>
+                    </button>
+                </mat-card-actions>
+            </form>
+
+        </mat-card-content>
+
+    </mat-card>
+</div>
+
