@@ -72,7 +72,8 @@
               "browserTarget": "spring-auth-fe:build:production"
             },
             "development": {
-              "browserTarget": "spring-auth-fe:build:development"
+              "browserTarget": "spring-auth-fe:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

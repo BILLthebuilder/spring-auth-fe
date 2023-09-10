@@ -9,11 +9,11 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
-//import { AuthService } from '../services/auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class UnauthorizedInterceptor implements HttpInterceptor {
-  //constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   intercept(
     request: HttpRequest<unknown>,
@@ -22,10 +22,10 @@ export class UnauthorizedInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err) => {
         if (err.status === 401) {
-          // this.authService.clearLocalStorage();
-          // this.router.navigate([''], {
-          //   queryParams: { returnUrl: this.router.routerState.snapshot.url },
-          // });
+          this.authService.logout();
+          this.router.navigate([''], {
+            queryParams: { returnUrl: this.router.routerState.snapshot.url },
+          });
         }
 
         if (!environment.production) {

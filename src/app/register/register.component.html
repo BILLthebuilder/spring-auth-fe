@@ -2,12 +2,15 @@
     <mat-card class="login-card">
         <mat-card-title> Register </mat-card-title>
         <mat-card-content>
-            <form (ngSubmit)='login()'>
+            <form (ngSubmit)='register()'>
                 <mat-form-field class="login-field" appearance="outline">
                     <input matInput placeholder="First Name" name="fname" [(ngModel)]="fname" type="text" required />
                 </mat-form-field>
                 <mat-form-field class="login-field" appearance="outline">
                     <input matInput placeholder="Last Name" name="lname" [(ngModel)]="lname" type="text" required />
+                </mat-form-field>
+                <mat-form-field class="login-field" appearance="outline">
+                    <input matInput placeholder="Phone Number" name="phoneNo" [(ngModel)]="phoneNo" type="text" required />
                 </mat-form-field>
                 <mat-form-field class="login-field" appearance="outline">
                     <input matInput placeholder="Email" name="email" [(ngModel)]="email" type="email" required />
@@ -17,8 +20,14 @@
                         required />
                 </mat-form-field>
 
+                <!-- <mat-form-field class="login-field" appearance="outline">
+                    <input matInput placeholder="Repeat Password" name="passwordConfirmation" [(ngModel)]="passwordConfirmation"
+                        type="password" required />
+                </mat-form-field> -->
+
                 <div *ngIf="loginError" color="warn">
-                    Signup failed. Please try again
+                    <!-- Signup failed. Please try again -->
+                    {{ message }}
                 </div>
                 <mat-card-actions>
                     <button *ngIf="!busy" [disabled]="busy" mat-raised-button color="primary" class="login-field" type="submit">
@@ -28,6 +37,9 @@
                         class="login-field" type="submit">
                         <mat-spinner [diameter]="30"></mat-spinner>
                     </button>
+                    <div>
+                        <p>Already have an Account? Click <a routerLink="">here</a> to login</p>
+                    </div>
                 </mat-card-actions>
             </form>
 

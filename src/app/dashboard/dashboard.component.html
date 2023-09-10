@@ -1,0 +1,33 @@
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side">
+    <div class="logo" [routerLink]="['home']">
+      <div class="icon">
+        <mat-icon>
+          account_balance
+        </mat-icon>
+      </div>
+      <h2>ALX TEST</h2>
+    </div>
+    <div class="nav-list">
+
+      <hr class="heading-line-user" />
+
+      <mat-nav-list>
+        <h3 class="heading-user-management">Home</h3>
+
+        <a mat-list-item [routerLink]="['home']" [routerLinkActive]="['active']">Home</a>
+      </mat-nav-list>
+
+      <hr class="heading-line-user" />
+      
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="logout-button">
+      <a class="logout" mat-raised-button color="warn" (click)="logout()">
+        Logout
+      </a>
+    </div>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

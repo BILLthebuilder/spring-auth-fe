@@ -5,7 +5,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { finalize } from 'rxjs/operators';
-// import { AuthService } from '../services/auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -16,16 +16,19 @@ export class RegisterComponent implements OnInit {
   busy = false;
   fname = '';
   lname = '';
+  phoneNo = '';
   email = '';
   password = '';
+  passwordConfirmation = '';
   loginError = false;
-  //private subscription: Subscription;
+  message = 'Error';
+  private subscription: Subscription | undefined;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
-  ) //private authService: AuthService
-  {}
+    private router: Router,
+    private authService: AuthService
+  ) {}
   ngOnInit(): void {
     // this.subscription = this.authService.user$.subscribe((x) => {
     //   if (this.router.url === '') {
@@ -37,23 +40,36 @@ export class RegisterComponent implements OnInit {
     //   } // If a tab shows login page, then refresh the page to reduce duplicate login
     // });
   }
-  login() {
-    if (!this.email || !this.password) {
+  register() {
+    if (
+      !this.fname ||
+      !this.lname ||
+      !this.phoneNo ||
+      !this.email ||
+      !this.password
+    ) {
       return;
     }
     this.busy = true;
-    // this.authService
-    //   .login(this.email, this.password)
-    //   .pipe(finalize(() => (this.busy = false)))
-    //   .subscribe(
-    //     () => {
-    //       this.router.navigateByUrl('/dashboard/home');
-    //     },
-    //     (error) => {
-    //       this.loginError = true;
-    //     }
-    //   );
-    this.router.navigateByUrl('/dashboard/home');
+    this.authService
+      .register(this.fname, this.lname, this.phoneNo, this.email, this.password)
+      .pipe(finalize(() => (this.busy = false)))
+      .subscribe(
+        (response) => {
+          const successMessage = response.message;
+          const succesStatus = response.status;
+          this.message = succesStatus+":"+successMessage;
+          this.router.navigateByUrl('');
+        },
+        (error) => {
+          const errorMessage = error.error.message;
+          const errorStatus = error.error.status;
+    
+          this.message = errorStatus+":"+errorMessage;
+          this.loginError = true;
+        }
+      );
+    //this.router.navigateByUrl('');
   }
 
   // ngOnDestroy(): void {

@@ -21,6 +21,9 @@
                     <button *ngIf="busy" style="display:flex;justify-content:center" [disabled]="busy" mat-raised-button color="primary" class="login-field" type="submit">
                         <mat-spinner [diameter]="30"></mat-spinner>
                     </button>
+                    <div>
+                    <p>Don't have an Account? Click <a routerLink="/register">here</a> to register</p> 
+                    </div>
                 </mat-card-actions>
             </form>
 
