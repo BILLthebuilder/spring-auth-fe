@@ -1,44 +1,17 @@
 <div class="main-container">
-  <h1>Welcome</h1>
+  <h1>Welcome! Some Jokes to enjoy here!</h1>
+  <button mat-raised-button color="primary" style="display:flex;justify-content:center" (click)="ngOnInit()">Refresh Jokes</button>
 
   <div class="cardContainer">
-    <div class="card" routerLink='/dashboard/users' >
-     <div class="icon">
-        <mat-icon> people </mat-icon>
-      </div>
-      
-      <h2>Users</h2>
-    </div>
-    <div class="card" routerLink='/dashboard/roles'>
-      <div class="icon">
-        <mat-icon>assignment_ind</mat-icon>
-      </div>
-      <h2>Roles</h2>
-    </div>
-    <div class="card" routerLink='/dashboard/merchants-dash'>
-      <div class="icon">
-        <mat-icon>money</mat-icon>
-      </div>
-      <h2>Merchants</h2>
-    </div>
-    <div class="card" routerLink='/dashboard/customers'>
-      <div class="icon">
-        <mat-icon>person_pin</mat-icon>
-      </div>
-      <h2>Customers</h2>
-    </div>
-    <div class="card" routerLink='/dashboard/agents'>
-      <div class="icon">
-        <mat-icon>support_agent</mat-icon>
-      </div>
-      <h2>Agents</h2>
-    </div>
-    <div class="card" routerLink='/dashboard/reports'>
-      <div class="icon">
-        <mat-icon>library_books</mat-icon>
-      </div>
-      <h2>Reports</h2>
-    </div>
+  <mat-spinner *ngIf="busy" style="display:flex;justify-content:center" color="primary" [diameter]="200">
+    loading...
+  </mat-spinner>
+    <div class="card" *ngFor="let joke of jokes">  
+      <h2 *ngIf="!busy">{{ joke.type }}</h2>
 
+      <p *ngIf="!busy">{{ joke.setup }}</p>
+
+      <p *ngIf="!busy">{{ joke.punchline }}</p>
+    </div>
   </div>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { AlxService } from '../services/alx-test.service';
+import { Joke } from '../services/jokesInterface';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,20 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private authService: AuthService) {}
+busy: boolean = true;
+  constructor(
+    private authService: AuthService,
+    private alxService: AlxService
+  ) {}
+  jokes: Joke[] = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.alxService
+      .getJokes()
+      .subscribe((data) => {
+        this.jokes = data;
+        this.busy = false;
+      })
+  }
+
 }

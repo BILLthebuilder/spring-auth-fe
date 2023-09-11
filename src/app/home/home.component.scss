@@ -8,11 +8,10 @@ $primary-color: #283593;
   height: auto;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
-  padding: 1%;
+  //padding: 1%;
   margin-right: 6%;
   padding-bottom: 100px;
   border-radius: 10px;
-
 }
 
 .cardContainer {
@@ -23,28 +22,49 @@ $primary-color: #283593;
   border-radius: 5px;
   cursor: pointer;
 
-
-
-
   .card {
     background: #f7fbfc;
-    height: 300px;
-    width: 500px;
+    height: 200px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-top: 4%;
     border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(83, 83, 83, 0.2), 0 6px 20px 0 rgba(87, 86, 86, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(83, 83, 83, 0.2),
+      0 6px 20px 0 rgba(87, 86, 86, 0.19);
+    h2 {
+      text-transform: uppercase;
+    }
+    p {
+      margin: 1%;
+    }
+  }
 
+  .card2 {
+    background: #f7fbfc;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(83, 83, 83, 0.2),
+      0 6px 20px 0 rgba(87, 86, 86, 0.19);
+    h2,
+    h4,
+    p {
+      margin: 1%;
+    }
 
     .mat-icon {
-      color: lighten($primary-color,10%);
+      color: lighten($primary-color, 10%);
       text-align: center;
       padding-right: 25%;
     }
-
   }
 
   .icon {
@@ -52,7 +72,4 @@ $primary-color: #283593;
     transform: scale(6);
     margin-bottom: 8%;
   }
-
-
-
 }
