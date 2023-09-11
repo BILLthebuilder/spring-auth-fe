@@ -1,0 +1,14 @@
+<div class="main-container">
+    <h1>Welcome! Here is some manga to read!</h1>
+
+    <div class="cardContainer">
+        <div class="card2" *ngFor="let manga of mangas">
+            <h2>{{ manga.attributes.canonicalTitle }}</h2>
+            <h4>Synopsis</h4>
+            <p>{{ manga.attributes.synopsis }}</p>
+            <h4>Description</h4>
+            <p>{{ manga.attributes.description }}</p>
+        </div>
+    </div>
+</div>
+

@@ -15,10 +15,11 @@ import { CoreModule } from './app-imports-module/core.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { MangaComponent } from './manga/manga.component';
 
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent,DashboardComponent,HomeComponent,NotfoundComponent],
+  declarations: [AppComponent, RegisterComponent, LoginComponent,DashboardComponent,HomeComponent,NotfoundComponent, MangaComponent],
   imports: [
     AppImportsModule,
     CommonModule,

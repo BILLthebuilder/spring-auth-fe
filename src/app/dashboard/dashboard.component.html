@@ -6,8 +6,8 @@
           account_balance
         </mat-icon>
       </div>
-      <h2>ALX TEST</h2>
-    </div>
+      <h2 [routerLink]="['home']">Jokes & Manga</h2>
+    </div>    
     <div class="nav-list">
 
       <hr class="heading-line-user" />
@@ -15,7 +15,13 @@
       <mat-nav-list>
         <h3 class="heading-user-management">Home</h3>
 
-        <a mat-list-item [routerLink]="['home']" [routerLinkActive]="['active']">Home</a>
+        <a mat-list-item [routerLink]="['home']" [routerLinkActive]="['active']">Jokes</a>
+      </mat-nav-list>
+
+      <mat-nav-list>
+        <h3 class="heading-user-management">Manga</h3>
+      
+        <a mat-list-item [routerLink]="['manga']" [routerLinkActive]="['active']">Manga</a>
       </mat-nav-list>
 
       <hr class="heading-line-user" />
