@@ -1,27 +1,54 @@
-# SpringAuthFe
+# Jokes & Manga
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7fbbfbc7-0d79-4ba2-b3c9-b896f3382c36/deploy-status)](https://app.netlify.com/sites/jokes-manga/deploys)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+What things you need to install the software and how to install them
 
-## Build
+- Nodejs 18.0 and above
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular CLI 14.1.0
 
-## Running unit tests
+### Installing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+A step by step series of examples that tell you how to get a development environment running
 
-## Running end-to-end tests
+- Clone the project repository
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+HTTPS: `git clone https://github.com/BILLthebuilder/spring-auth-fe.git`
 
-## Further help
+SSH: `git clone git@github.com:BILLthebuilder/spring-auth-fe.git`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Change the directory
+
+`cd spring-auth-fe`
+
+- To compile a local build
+
+```bash
+npm start
+```
+or
+
+```bash
+ng serve
+```
+
+- Navigate to:
+
+```bash
+http://localhost:4200
+```
+
+- Page will autoreload whenever you make changes
+
+## Production
+
+The App is deployed [here](https://jokes-manga.netlify.app/) where you can login and read some awesome puns and manga 😊
