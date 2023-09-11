@@ -18,7 +18,7 @@ interface LoginResult {
 export class AuthService implements OnDestroy {
   @Output() loggedIn: EventEmitter<boolean> = new EventEmitter();
   @Output() email: EventEmitter<string> = new EventEmitter();
-  private readonly apiUrl = `http://localhost:7900`;
+  private readonly apiUrl = `https://3.65.29.7`;
   //private timer: Subscription;
   private _user = new BehaviorSubject<ApplicationUser>(null!);
   user$: Observable<ApplicationUser> = this._user.asObservable();
@@ -80,7 +80,13 @@ export class AuthService implements OnDestroy {
     );
   }
 
-  register(firstName:string, lastName:string, phoneNumber:string, email: string, password: string) {
+  register(
+    firstName: string,
+    lastName: string,
+    phoneNumber: string,
+    email: string,
+    password: string
+  ) {
     const signupUrl = `${this.apiUrl}/api/v1/users/signup`;
 
     const body = {
@@ -93,7 +99,6 @@ export class AuthService implements OnDestroy {
 
     return this.http.post(signupUrl, body).pipe(
       map((response: any) => {
-       
         const responseMessage = response.message;
         const status = response.status;
 
