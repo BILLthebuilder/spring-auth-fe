@@ -19,12 +19,46 @@ $my-theme: mat.define-light-theme((color: (primary: $my-primary,
     font-family: Poppins;
     src: url("../src/assets/fonts/Poppins-Light.ttf") format("truetype");
 }
-*{
-    font-family: Poppins, sans-serif;    
+* {
+    font-family: Poppins, sans-serif,'Material Icons';
 }
-button{
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+button {
     text-transform: uppercase;
     font-weight: bold;
-    height: 40px;
-    width: 100%;
+}
+.red-snackbar{
+background-color: rgb(153, 50, 50);
+color: white;
+}
+
+.green-snackbar{
+background-color: rgb(146, 238, 181);
+color: white;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px  rgb(204, 203, 203); 
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background:  rgb(192, 191, 191); 
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background:rgba(245, 245, 245, 1); 
 }
