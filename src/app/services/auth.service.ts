@@ -18,7 +18,7 @@ interface LoginResult {
 export class AuthService implements OnDestroy {
   @Output() loggedIn: EventEmitter<boolean> = new EventEmitter();
   @Output() email: EventEmitter<string> = new EventEmitter();
-  private readonly apiUrl = `https://3.65.29.7`;
+  private readonly apiUrl = `https://3.120.190.81`;
   //private timer: Subscription;
   private _user = new BehaviorSubject<ApplicationUser>(null!);
   user$: Observable<ApplicationUser> = this._user.asObservable();
